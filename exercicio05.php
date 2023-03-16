@@ -5,23 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Idade</title>
+    <title>Tabuada</title>
 </head>
 
 <body>
     <form>
-        Informe sua idade: <input type="text" name="num1"><br>
+        Informe um número <input type="text" name="num"><br>
         <button type="submit">exibir</button>
     </form>
-
     <?php
-    if (isset($_GET['num1'])) {
-        $num1 = $_GET['num1'];
-
-        if ($num1 < 18)
-            echo "Entrada Não Permitida";
-        else
-            echo "Entrada permitida";
+    if (isset($_GET['num'])) {
+        $num = $_GET['num'];
+        if ($num > 0) {
+            for ($i = 0; $i < 11; $i++) {
+                echo "$i x $num = " . $i * $num . "<br>";
+            }
+        }
     }
     ?>
 </body>
